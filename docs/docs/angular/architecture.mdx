@@ -390,7 +390,7 @@ export class CartQuery extends QueryEntity<CartState> {
   ).pipe(map(joinItems));
 }
 
-function joinItems([cartItems, products]: [CartItem[], Product[]]) {
+function joinItems([cartItems, products]: [CartItem[], HashMap<Product>]) {
   return cartItems.map(item => {
     const product = products[item.productId];
     return {
